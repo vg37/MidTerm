@@ -1,34 +1,32 @@
 //
 //  DataViewController.swift
-//  MidCompare
+//  Midterm
 //
-//  Created by Gangisetty,Venugopal on 11/4/15.
+//  Created by Gangisetty,Venugopal on 10/29/15.
 //  Copyright © 2015 Gangisetty,Venugopal. All rights reserved.
 //
 
 import UIKit
 
 class DataViewController: UIViewController {
-
+    
     @IBOutlet weak var dataLabel: UILabel!
-    var dataObject: String = ""
-
-
+    var listOfSubjects: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let subjects = self.listOfSubjects else {
+            return
+        }
+        
+        // update the user interface with CatNames
+        self.dataLabel!.text = subjects
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.dataLabel!.text = dataObject
-    }
-
-
+    
 }
+
 
